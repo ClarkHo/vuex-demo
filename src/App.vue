@@ -1,20 +1,26 @@
 <template>
   <div id="app">
-     <!-- 把count 方法直接写入，可自己执行 -->
+     <!-- 这个　increment 方法与下面　methods 中的　increment 相对应 -->
+     <button @click="increment">增加</button>
+     <button>减少</button>
     <h1>{{count}}</h1>
   </div>
 </template>
 
 <script>
+import {mapGetters, mapActions} from 'vuex';
 export default {
   name: 'app',
-  computed: {
-    count() {
-      //　返回获取到的数据
-      return this.$store.state.count;
-             }    
+  computed: mapGetters([
+    // 此处的　count 与以下store.js 文件中的getters 内的count 相对应
+    'count'
+    ]),
+  methods: mapActions([
+    // 该increment　来自　store.js 中导出的　actions 和　mutations 中的　increment
+    'increment'
+    ])
   }
-  }
+  
 </script>
 
 <style>
