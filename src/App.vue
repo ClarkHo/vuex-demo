@@ -2,7 +2,7 @@
   <div id="app">
      <!-- 这个　increment 方法与下面　methods 中的　increment 相对应 -->
      <button @click="increment">增加</button>
-     <button>减少</button>
+     <button @click="abc">减少</button>
     <h1>{{count}}</h1>
   </div>
 </template>
@@ -17,7 +17,7 @@ export default {
     ]),
   methods: mapActions([
     // 该increment　来自　store.js 中导出的　actions 和　mutations 中的　increment
-    'increment'
+    'increment','abc'
     ])
   }
   

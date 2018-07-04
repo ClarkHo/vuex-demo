@@ -22,6 +22,9 @@ const actions = {
     // 的 increment 对应
     //commit 提交变化，修改数据的唯一方式就是显式的提交 mutations
     commit('increment')
+  },
+   abc({commit,state}) {
+     commit('abc')
   }
 }
 
@@ -30,6 +33,9 @@ const mutations = {
   // 与上方　commmit 中的'increment'　相对应
   increment(state) {
     state.count ++;
+  },
+  abc(state) {
+    state.count --;
   }
 }
 // 创建store 对象
